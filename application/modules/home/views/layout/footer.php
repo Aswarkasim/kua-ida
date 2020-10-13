@@ -1,27 +1,19 @@
-<!-- Start Footer -->
-<footer id="footer" class="footer style-1 dark">
-
-  <a href="index.html"><img src="<?= base_url('assets/home/')  ?>img/assets/footer-logo.png" alt="#" class="mr-auto img-responsive"></a>
-  <ul>
-    <li><a href="https://www.twitter.com/" target="_blank" class="color"><i class="ion-social-twitter"></i></a></li>
-    <li><a href="https://www.facebook.com/" target="_blank" class="color"><i class="ion-social-facebook"></i></a></li>
-    <li><a href="https://www.linkedin.com/" target="_blank" class="color"><i class="ion-social-linkedin"></i></a></li>
-    <li><a href="https://www.pinterest.com/" target="_blank" class="color"><i class="ion-social-pinterest"></i></a></li>
-    <li><a href="https://plus.google.com/" target="_blank" class="color"><i class="ion-social-googleplus"></i></a></li>
-  </ul>
-  <a href="<?= base_url('admin/auth'); ?>">Admin Log</a><br>
-  <a href="http://themeforest.net/user/vossendesign/portfolio" target="_blank"><strong>© Wunderkind 2016</strong></a>
-  <p>Made with love for great people.</p>
-
-  <!-- Back To Top Button -->
-  <span><a class="scroll-top"><i class="ion-chevron-up"></i></a></span>
-
+<hr>
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted"><a href="<?= base_url('admin/auth'); ?>">admin log</a> Sekda Jeneponto <a href="<?= base_url('instansi/auth'); ?>">Instansi Log</a></span>
+    <span class="pull-right">
+      <?php if ($this->session->userdata('id_alumni')) { ?>
+        <a href="<?= base_url('home/auth/logout'); ?>" class="btn btn-secondary"><i class="fa fa-sign-out"></i> Logout</a>
+      <?php } ?>
+    </span>
+  </div>
 </footer>
-<!-- End Footer -->
-
-<script src="<?= base_url('assets/home/')  ?>js/jquery.js"></script>
-<script src="<?= base_url('assets/home/')  ?>js/init.js"></script>
-<script src="<?= base_url('assets/home/')  ?>js/scripts.js"></script>
+<!-- footer part end-->
+<!-- custom js -->
+<script src="<?= base_url('assets/home/') ?>js/bootstrap.min.js"></script>
+<script src="<?= base_url('assets/') ?>js/sweetalert2.all.min.js"></script>
+<script src="<?= base_url('assets/') ?>js/mySwal.js"></script>
 
 </body>
 

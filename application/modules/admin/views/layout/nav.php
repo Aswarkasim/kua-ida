@@ -103,12 +103,24 @@ $role = $this->session->userdata('role');
                 </ul>
             </li>
 
-            <li class="<?php if ($this->uri->segment(2) == "konfigurasi") {
-                            echo "active";
-                        }
-                        ?>"><a href="<?php echo base_url('admin/konfigurasi')
-                                        ?>"><i class="fa fa-cogs"></i> <span>Konfigurasi</span></a></li>
+            <li class="treeview <?php if ($this->uri->segment(2) == "konfigurasi") {
+                                    echo "active";
+                                } ?>">
+                <a href="#"><i class="fa fa-cogs"></i> <span>Konfigurasi</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<?php if ($this->uri->segment(3) == "index") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/konfigurasi/index') ?>">General</a></li>
 
+
+                    <li class="<?php if ($this->uri->segment(3) == "banner") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/konfigurasi/banner') ?>">Banner</a></li>
+                </ul>
 
         </ul>
         <!-- /.sidebar-menu -->

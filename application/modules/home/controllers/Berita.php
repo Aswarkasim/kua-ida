@@ -5,22 +5,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Berita extends CI_Controller
 {
 
-  
-  public function __construct()
-  {
-    parent::__construct();
-    
-    $this->load->model('home/Home_model','HM');
-    
-  }
-  
-
   public function index()
   {
-    $berita = $this->HM->;
+    $berita = $this->Crud_model->listing('tbl_berita');
+    $kategori = $this->Crud_model->listing('tbl_kategori');
     $data = [
-      'content'  => 'home/home/berita'
+      'berita'  => $berita,
+      'kategori'  => $kategori,
+      'content'  => 'home/berita/index'
     ];
     $this->load->view('home/layout/wrapper', $data, FALSE);
   }
 }
+
+/* End of file Controllername.php */

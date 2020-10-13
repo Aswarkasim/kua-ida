@@ -8,7 +8,7 @@ class Visimisi extends CI_Controller
   public function index()
   {
     $data = [
-      'content'  => 'home/home/visimisi'
+      'content'  => 'home/visimisi/index'
     ];
     $this->load->view('home/layout/wrapper', $data, FALSE);
   }
