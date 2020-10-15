@@ -12,4 +12,13 @@ class Home_model extends CI_Model
       ->join('tbl_kategori', 'tbl_kategori.id_kategori = tbl_kategori.id_kategori', 'LEFT');
     return $this->db->get()->result();
   }
+
+  function listSideBerita()
+  {
+    $this->db->select('*')
+      ->from('tbl_berita')
+      ->order_by('date_created', 'DESC')
+      ->limit(5);
+    return $this->db->get()->result();
+  }
 }

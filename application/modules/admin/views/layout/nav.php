@@ -86,6 +86,24 @@ $role = $this->session->userdata('role');
                 </ul>
             </li>
 
+            <li class="treeview <?php if ($this->uri->segment(2) == "karyawan") {
+                                    echo "active";
+                                } ?>">
+                <a href="#"><i class="fa fa-users"></i> <span>Karyawan</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<?php if ($this->uri->segment(2) == "karyawan") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/karyawan') ?>">Karyawan</a></li>
+                    <li class="<?php if ($this->uri->segment(2) == "struktur") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/struktur') ?>">Struktur Organisasi</a></li>
+                </ul>
+            </li>
+
 
 
             <li class="treeview <?php if ($this->uri->segment(2) == "user") {

@@ -37,8 +37,8 @@ class Syarat extends CI_Controller
     $this->load->helper('String');
 
     $valid = $this->form_validation;
-    $valid->set_rules('id_syarat', 'Kode Kaategori', 'macthes[tbl_syarat.id_syarat]', array('matches' => '%s telah ada. Silahkan masukkan kode yang lain'));
-    $valid->set_rules('nama_syarat', 'Nama Kaategori', 'macthes[tbl_syarat.nama_syarat]', array('matches' => '%s telah ada. Silahkan masukkan kode yang lain'));
+    $valid->set_rules('id_syarat', 'Kode Kaategori', 'is_unique[tbl_syarat.id_syarat]', array('is_unique' => '%s telah ada. Silahkan masukkan kode yang lain'));
+    $valid->set_rules('nama_syarat', 'Nama Kaategori', 'is_unique[tbl_syarat.nama_syarat]', array('is_unique' => '%s telah ada. Silahkan masukkan kode yang lain'));
 
 
     if ($valid->run() === TRUE) {
