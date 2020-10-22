@@ -8,7 +8,7 @@ class Dashboard extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if ($this->session->userdata('id_user') == "") {
+        if ($this->session->userdata('id_admin') == "") {
             redirect('admin/auth');
         }
     }
@@ -16,8 +16,8 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
-        $id_user = $this->session->userdata('id_user');
-        $user = $this->Crud_model->listingOne('tbl_user', 'id_user', $id_user);
+        $id_admin = $this->session->userdata('id_admin');
+        $user = $this->Crud_model->listingOne('tbl_admin', 'id_admin', $id_admin);
 
         $data = [
             'title'     => 'Dashboard',

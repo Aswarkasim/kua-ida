@@ -84,7 +84,12 @@
                             <label for="" class="pull-right">jabatan</label>
                         </div>
                         <div class="col-md-9">
-                            <input type="text" placeholder="jabatan" class="form-control" name="jabatan" required>
+                            <select name="id_struktur" class="form-control">
+                                <option value="">-- Jabatan --</option>
+                                <?php foreach ($struktur as $row) { ?>
+                                    <option value="<?= $row->id_struktur; ?>"><?= $row->nama_struktur; ?></option>
+                                <?php } ?>
+                            </select>
                         </div>
                     </div>
                 </div>

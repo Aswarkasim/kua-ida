@@ -59,7 +59,7 @@ class Crud_model extends CI_Model
     public function login($email, $password)
     {
         $this->db->select('*')
-            ->from('tbl_user')
+            ->from('tbl_admin')
             ->where(array(
                 'email'      => $email,
                 'password'   => sha1($password)
@@ -70,7 +70,7 @@ class Crud_model extends CI_Model
     public function loginUsername($username, $password)
     {
         $this->db->select('*')
-            ->from('tbl_user')
+            ->from('tbl_admin')
             ->where(array(
                 'username'      => $username,
                 'password'   => sha1($password)
@@ -81,10 +81,10 @@ class Crud_model extends CI_Model
 
     function listingUser()
     {
-        $this->db->select('tbl_user.*,
-                            tbl_user_role.role')
-            ->from('tbl_user')
-            ->join('tbl_user_role', 'tbl_user_role.id_role = tbl_user.id_role', 'LEFT');
+        $this->db->select('tbl_admin.*,
+                            tbl_admin_role.role')
+            ->from('tbl_admin')
+            ->join('tbl_admin_role', 'tbl_admin_role.id_role = tbl_admin.id_role', 'LEFT');
         return $this->db->get()->result();
     }
 }

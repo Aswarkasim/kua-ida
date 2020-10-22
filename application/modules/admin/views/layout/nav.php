@@ -37,9 +37,6 @@ $role = $this->session->userdata('role');
                     <li class="<?php if ($this->uri->segment(3) == "profil") {
                                     echo "active";
                                 } ?>"><a href="<?= base_url('admin/profil/visimisi') ?>">Visi & Misi</a></li>
-                    <li class="<?php if ($this->uri->segment(3) == "Sejarah") {
-                                    echo "active";
-                                } ?>"><a href="<?= base_url('admin/profil/sejarah') ?>">Sejarah</a></li>
                 </ul>
             </li>
 
@@ -55,7 +52,7 @@ $role = $this->session->userdata('role');
                 <ul class="treeview-menu">
                     <li class="<?php if ($this->uri->segment(2) == "pernikahan") {
                                     echo "active";
-                                } ?>"><a href="<?= base_url('admin/pernikahan') ?>">Pernikahan</a></li>
+                                } ?>"><a href="<?= base_url('admin/pendaftaran') ?>">Pernikahan</a></li>
                     <li class="<?php if ($this->uri->segment(2) == "jadwal") {
                                     echo "active";
                                 } ?>"><a href="<?= base_url('admin/jadwal') ?>">Jadwal</a></li>
@@ -117,7 +114,10 @@ $role = $this->session->userdata('role');
                 <ul class="treeview-menu">
                     <li class="<?php if ($this->uri->segment(2) == "user") {
                                     echo "active";
-                                } ?>"><a href="<?= base_url('admin/user') ?>">List User</a></li>
+                                } ?>"><a href="<?= base_url('admin/user') ?>">User</a></li>
+                    <li class="<?php if ($this->uri->segment(2) == "admin") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/admin') ?>">Admin</a></li>
                 </ul>
             </li>
 

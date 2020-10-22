@@ -1,6 +1,6 @@
 <?php
-$id_user = $this->session->userdata('id_user');
-$user = $this->Crud_model->listingOne('tbl_user', 'id_user', $id_user);
+$id_admin = $this->session->userdata('id_admin');
+$admin = $this->Crud_model->listingOne('tbl_admin', 'id_admin', $id_admin);
 
 ?>
 <div class="flash-data" data-flashdata="<?= $this->session->flashdata('msg') ?>"></div>
@@ -11,7 +11,7 @@ $user = $this->Crud_model->listingOne('tbl_user', 'id_user', $id_user);
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>KU</b>A</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>KUA -</b> LAKKADING</span>
+        <span class="logo-lg"><b>KU</b>A</span>
     </a>
 
     <!-- Header Navbar -->
@@ -27,14 +27,14 @@ $user = $this->Crud_model->listingOne('tbl_user', 'id_user', $id_user);
                 <li class="dropdown user user-menu">
                     <!-- Menu Toggle Button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="hidden-xs"><?= $user->nama_user ?></span>
+                        <span class="hidden-xs"><?= $admin->nama_admin ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- The user image in the menu -->
                         <li class="user-header">
                             <p>
-                                <?= $user->nama_user ?>
-                                <small><?= $user->role ?></small>
+                                <?= $admin->nama_admin ?>
+                                <small><?= $admin->role ?></small>
                             </p>
                         </li>
                         <!-- Menu Footer-->

@@ -22,10 +22,12 @@ class Karyawan extends CI_Controller
     ];
 
     $karyawan = $this->Crud_model->listing('tbl_karyawan');
+    $struktur = $this->Crud_model->listing('tbl_struktur');
     $data = [
 
       'karyawan' => $karyawan,
       'tombol'   => $tombol,
+      'struktur'   => $struktur,
       'content' => 'admin/karyawan/index'
     ];
     $this->load->view('admin/layout/wrapper', $data, FALSE);
@@ -53,7 +55,7 @@ class Karyawan extends CI_Controller
         'pangkat'         => $i->post('pangkat'),
         'golongan'        => $i->post('golongan'),
         'pendidikan_terakhir'   => $i->post('pendidikan_terakhir'),
-        'jabatan'         => $i->post('jabatan'),
+        'id_struktur'         => $i->post('id_struktur'),
         'alamat'          => $i->post('alamat')
       ];
       $this->Crud_model->add('tbl_karyawan', $data);
@@ -73,8 +75,15 @@ class Karyawan extends CI_Controller
     } else {
       $i = $this->input;
       $data = [
+        'id_karyawan'   => $id_karyawan,
         'nama_karyawan'   => $i->post('nama_karyawan'),
-        'id_karyawan'   => $i->post('id_karyawan')
+        'tempat_lahir'    => $i->post('tempat_lahir'),
+        'tanggal_lahir'   => $i->post('tanggal_lahir'),
+        'pangkat'         => $i->post('pangkat'),
+        'golongan'        => $i->post('golongan'),
+        'pendidikan_terakhir'   => $i->post('pendidikan_terakhir'),
+        'id_struktur'         => $i->post('id_struktur'),
+        'alamat'          => $i->post('alamat')
       ];
       $this->Crud_model->edit('tbl_karyawan', 'id_karyawan', $id_karyawan, $data);
       $this->session->set_flashdata('msg', 'karyawan berhasil diedit');

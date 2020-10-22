@@ -4,6 +4,30 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Home_model extends CI_Model
 {
+
+  public function loginEmail($email, $password)
+  {
+    $this->db->select('*')
+      ->from('tbl_user')
+      ->where(array(
+        'email'      => $email,
+        'password'   => sha1($password)
+      ));
+    $query = $this->db->get();
+    return $query->row();
+  }
+  public function loginUsername($username, $password)
+  {
+    $this->db->select('*')
+      ->from('tbl_user')
+      ->where(array(
+        'username'      => $username,
+        'password'   => sha1($password)
+      ));
+    $query = $this->db->get();
+    return $query->row();
+  }
+
   function listBerita()
   {
     $this->db->select('tbl_berita.*,
@@ -19,6 +43,22 @@ class Home_model extends CI_Model
       ->from('tbl_berita')
       ->order_by('date_created', 'DESC')
       ->limit(5);
+    return $this->db->get()->result();
+  }
+
+  function listStruktur()
+  {
+    $this->db->select('*')
+      ->from('tbl_struktur')
+      ->order_by('urutan', 'ASC');
+    return $this->db->get()->result();
+  }
+
+  function cekUserDaftar($id_user)
+  {
+    $this->db->select('*')
+      ->from('tbl_daftar')
+      ->where('id_user', $id_user);
     return $this->db->get()->result();
   }
 }

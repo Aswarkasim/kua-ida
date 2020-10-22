@@ -21,11 +21,12 @@
             </thead>
             <tbody id="targetData">
                 <?php $no = 1;
-                foreach ($user as $row) { ?>
+                foreach ($admin as $row) { ?>
                     <tr>
                         <td><?= $no ?></td>
                         <td>
-                            <a href="<?= base_url('admin/user/detail/' . $row->id_user); ?>"><strong><?= $row->namalengkap ?></strong></a><br>
+                            <strong><?= $row->nama_admin ?></strong><br>
+                            <p><?= $row->email ?> - <?= $row->role ?></p>
                         </td>
                         <td><?php if ($row->is_active == 1) {
                                 echo '<div class="label label-success">Aktif</div>';
@@ -40,8 +41,8 @@
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
-                                    <!-- <li><a href="<?= base_url($edit . $row->id_user)  ?>"><i class="fa fa-edit"></i> Edit</a></li> -->
-                                    <li><a class="tombol-hapus" href="<?= base_url($delete . $row->id_user)  ?>"><i class="fa fa-trash"></i> Hapus</a></li>
+                                    <li><a href="<?= base_url($edit . $row->id_admin)  ?>"><i class="fa fa-edit"></i> Edit</a></li>
+                                    <li><a class="tombol-hapus" href="<?= base_url($delete . $row->id_admin)  ?>"><i class="fa fa-trash"></i> Hapus</a></li>
                                 </ul>
                             </div>
 

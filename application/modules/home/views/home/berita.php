@@ -4,8 +4,8 @@
 
   <div class="row">
     <div class="col-md-8">
+      <h3><strong>Berita</strong></h3>
       <ul class="list-unstyled">
-
         <?php foreach ($berita as $row) { ?>
           <li class="media">
             <img src="<?= base_url($row->gambar); ?>" width="100px" class="mr-3" alt="...">

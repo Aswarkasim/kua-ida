@@ -12,7 +12,7 @@ if (!function_exists('nominal')) {
 function is_logged_in_user()
 {
     $ci = get_instance();
-    if (($ci->session->userdata('id_user') == '') && $ci->session->userdata('role') == '') {
+    if ($ci->session->userdata('id_user') == '') {
         redirect('home/auth');
     }
 }

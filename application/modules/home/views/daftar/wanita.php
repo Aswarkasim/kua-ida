@@ -12,12 +12,12 @@
 
     <div class="form-group">
       <label for="">Nama</label>
-      <input type="text" placeholder="Nama">
+      <input class="form-control" type="text" placeholder="Nama">
     </div>
 
     <div class="form-group">
       <label for="">No. KTP</label>
-      <input type="number" placeholder="No. Ktp">
+      <input class="form-control" type="number" placeholder="No. Ktp">
     </div>
 
     <div class="form-group">
@@ -97,7 +97,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Keterangan Kematian Bagi yang Cerai Mati</h5>
       </div>
       <div class="modal-body">
-        <input type="file" name="sk_kematian_cerai_wanita" required id="">
+        <input class="form-control" type="file" name="sk_kematian_cerai_wanita" required id="">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -117,7 +117,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Akta Cerai</h5>
       </div>
       <div class="modal-body">
-        <input type="file" name="akta_cerai_wanita" required id="">
+        <input class="form-control" type="file" name="akta_cerai_wanita" required id="">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -137,7 +137,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Pas Foto Latar Biru</h5>
       </div>
       <div class="modal-body">
-        <input type="file" name="foto_wanita" required id="">
+        <input class="form-control" type="file" name="foto_wanita" required id="">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -157,7 +157,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Surat Keterangan Belum Menikah</h5>
       </div>
       <div class="modal-body">
-        <input type="file" name="sk_belum_menikah_wanita" required id="">
+        <input class="form-control" type="file" name="sk_belum_menikah_wanita" required id="">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -177,7 +177,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Surat Keterangan Imunitas</h5>
       </div>
       <div class="modal-body">
-        <input type="file" name="sk_imunitas_wanita" required id="">
+        <input class="form-control" type="file" name="sk_imunitas_wanita" required id="">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -197,7 +197,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Ijazah Terakhir</h5>
       </div>
       <div class="modal-body">
-        <input type="file" name="ijazah_terakhir_wanita" required id="">
+        <input class="form-control" type="file" name="ijazah_terakhir_wanita" required id="">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -217,7 +217,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Kartu Keluarga Wanita</h5>
       </div>
       <div class="modal-body">
-        <input type="file" name="kk_wanita" required id="">
+        <input class="form-control" type="file" name="kk_wanita" required id="">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -238,7 +238,7 @@
         <h5 class="modal-title" id="exampleModalLabel">KTP Wanita</h5>
       </div>
       <div class="modal-body">
-        <input type="file" name="ktp_wanita" required id="">
+        <input class="form-control" type="file" name="ktp_wanita" required id="">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -8,9 +8,38 @@
 
     </div>
 
-    <h3>Peringatan</h3>
+    <h3>Data Pendaftar</h3>
 
-    <h4>Persiapkan semua yang ada pada halaman persyaratan</h4>
+
+
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <label for="">Nama Pendaftar</label>
+          <input type="text" class="form-control" placeholder="Nama Pendaftar">
+        </div>
+
+        <div class="form-group">
+          <label for="">No. KTP Pendaftar</label>
+          <input type="text" class="form-control" placeholder="Nama Pendaftar">
+        </div>
+      </div>
+
+
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Alamat Pendaftar</label>
+          <input type="text" class="form-control" placeholder="Nama Pendaftar">
+        </div>
+
+        <div class="form-group">
+          <label for="">No. Hp Pendaftar</label>
+          <input type="text" class="form-control" placeholder="Nama Pendaftar">
+        </div>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-md-12 text-center">

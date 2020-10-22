@@ -28,7 +28,6 @@ class Auth extends CI_Controller
 
         if ($valid->run() === FALSE) {
             $data = array(
-                'title'     => 'Login Admin Ananda Private',
                 'content'   => 'admin/auth/content/'
             );
             $this->load->view('admin/auth/login_admin', $data);
@@ -41,9 +40,9 @@ class Auth extends CI_Controller
 
             if (!empty($cek_login) == 1) {
                 $s = $this->session;
-                $s->set_userdata('id_user', $cek_login->id_user);
+                $s->set_userdata('id_admin', $cek_login->id_admin);
                 $s->set_userdata('email', $cek_login->email);
-                $s->set_userdata('nama_user', $cek_login->nama_user);
+                $s->set_userdata('nama_admin', $cek_login->nama_admin);
                 $s->set_userdata('is_active', $cek_login->is_active);
                 $s->set_userdata('role', $cek_login->role);
 
@@ -62,9 +61,9 @@ class Auth extends CI_Controller
     function logout()
     {
         $s = $this->session;
-        $s->unset_userdata('id_user');
+        $s->unset_userdata('id_admin');
         $s->unset_userdata('email');
-        $s->unset_userdata('nama_user');
+        $s->unset_userdata('nama_admin');
         $s->unset_userdata('role');
         $s->unset_userdata('is_active');
         redirect(base_url('admin/auth'), 'refresh');
