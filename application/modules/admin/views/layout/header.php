@@ -2,6 +2,8 @@
 $id_admin = $this->session->userdata('id_admin');
 $admin = $this->Crud_model->listingOne('tbl_admin', 'id_admin', $id_admin);
 
+$konfigurasi = $this->Crud_model->listingOne('tbl_konfigurasi', 'id_konfigurasi', '1');
+
 ?>
 <div class="flash-data" data-flashdata="<?= $this->session->flashdata('msg') ?>"></div>
 <div class="gagal" data-flashdata="<?= $this->session->flashdata('msg_er') ?>"></div>

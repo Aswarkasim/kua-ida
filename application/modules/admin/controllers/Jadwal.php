@@ -6,6 +6,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Jadwal extends CI_Controller
 {
 
+  public function __construct()
+  {
+    parent::__construct();
+    $this->load->model('admin/Admin_model', 'AM');
+  }
+
+
   public function index()
   {
     $jadwal = $this->Crud_model->listing('tbl_jadwal');
@@ -30,7 +37,7 @@ class Jadwal extends CI_Controller
 
     $valid->set_rules('nama_pria', 'Nama Pria', 'required');
     $valid->set_rules('nama_wanita', 'Nama Wanita', 'required');
-    $valid->set_rules('akad', 'Akad', 'required');
+    $valid->set_rules('tanggal', 'Tanggal Akad', 'required');
     $valid->set_rules('tempat', 'Tempat', 'required');
 
     if ($valid->run() === FALSE) {
@@ -47,9 +54,13 @@ class Jadwal extends CI_Controller
         'id_jadwal'       => random_string('numeric', '15'),
         'nama_pria'       => $i->post('nama_pria'),
         'nama_wanita'     => $i->post('nama_wanita'),
-        'akad'            => $i->post('akad'),
-        'tempat'          => $i->post('tempat'),
-        'is_done'         => $i->post('is_done')
+        'tanggal'         => $i->post('tanggal'),
+        'tempat'           => $i->post('tempat'),
+        'is_done'         => $i->post('is_done'),
+        'penghulu'        => $i->post('penghulu'),
+        'mahar_pernikahan' => $i->post('mahar_pernikahan'),
+        'saksi'           => $i->post('saksi'),
+        'wali_wanita'     => $i->post('wali_wanita'),
       ];
       $this->Crud_model->add('tbl_jadwal', $data);
       $this->session->set_flashdata('msg', 'ditambah');
@@ -80,11 +91,14 @@ class Jadwal extends CI_Controller
     } else {
       $i = $this->input;
       $data = [
-        'id_jadwal'       => $id_jadwal,
         'nama_pria'       => $i->post('nama_pria'),
         'nama_wanita'     => $i->post('nama_wanita'),
-        'akad'            => $i->post('akad'),
-        'tempat'          => $i->post('tempat'),
+        'tanggal'         => $i->post('tanggal'),
+        'penghulu'        => $i->post('penghulu'),
+        'mahar_pernikahan' => $i->post('mahar_pernikahan'),
+        'saksi'           => $i->post('saksi'),
+        'tempat'           => $i->post('tempat'),
+        'wali_wanita'     => $i->post('wali_wanita'),
         'is_done'         => $i->post('is_done')
       ];
       $this->Crud_model->edit('tbl_jadwal', 'id_jadwal', $id_jadwal, $data);
@@ -98,6 +112,54 @@ class Jadwal extends CI_Controller
     $this->Crud_model->delete('tbl_jadwal', 'id_jadwal', $id_jadwal);
     $this->session->set_flashdata('msg', 'dihapus');
     redirect('admin/jadwal', 'refresh');
+  }
+
+  function cetakList()
+  {
+    $jadwal = $this->Crud_model->listing('tbl_jadwal');
+    $konfigurasi = $this->Crud_model->listingOne('tbl_konfigurasi', 'id_konfigurasi', '1');
+    $data = [
+      'jadwal'  => $jadwal,
+      'konfigurasi'  => $konfigurasi
+    ];
+    $this->load->view('admin/jadwal/cetakList', $data, FALSE);
+  }
+
+  function printListRange()
+  {
+
+
+    $awal = $this->input->post('awal');
+    $akhir = $this->input->post('akhir');
+    $konfigurasi = $this->Crud_model->listingOne('tbl_konfigurasi', 'id_konfigurasi', '1');
+    $jadwal = $this->AM->printListRange($awal, $akhir);
+    $data = [
+      'jadwal'  => $jadwal,
+      'konfigurasi'  => $konfigurasi
+    ];
+    $this->load->view('admin/jadwal/cetakList', $data, FALSE);
+  }
+
+  function printSelesai()
+  {
+    $konfigurasi = $this->Crud_model->listingOne('tbl_konfigurasi', 'id_konfigurasi', '1');
+    $jadwal = $this->AM->printDone('Selesai');
+    $data = [
+      'jadwal'  => $jadwal,
+      'konfigurasi'  => $konfigurasi
+    ];
+    $this->load->view('admin/jadwal/cetakList', $data, FALSE);
+  }
+
+  function printBelum()
+  {
+    $konfigurasi = $this->Crud_model->listingOne('tbl_konfigurasi', 'id_konfigurasi', '1');
+    $jadwal = $this->AM->printDone('Belum Selesai');
+    $data = [
+      'jadwal'  => $jadwal,
+      'konfigurasi'  => $konfigurasi
+    ];
+    $this->load->view('admin/jadwal/cetakList', $data, FALSE);
   }
 }
 

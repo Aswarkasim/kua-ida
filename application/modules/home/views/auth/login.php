@@ -1,6 +1,6 @@
-<div class="jumbotron">
+<div class="pt-5 mt-5">
   <div class="row text-center">
-    <div class="col-md-offset-4 col-md-4">
+    <div class="offset-4 col-md-4">
       <form action="<?= base_url('home/auth') ?>" method="post">
         <h1>Silakan Login</h1>
         <?= validation_errors('<div class="text text-danger">', '</div>') ?>

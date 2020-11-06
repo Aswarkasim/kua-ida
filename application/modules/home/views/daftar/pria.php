@@ -11,88 +11,68 @@
 
     <h3>Data Pria</h3>
 
-    <div class="form-group">
-      <label for="">Nama</label>
-      <input class="form-control" type="text" placeholder="Nama">
-    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <?= validation_errors() ?>
+        <table class="table">
+          <tr>
+            <td width="200px">Nama </td>
+            <td>: <?= $dataPria->nama_pria; ?></td>
+          </tr>
+          <tr>
+            <td>Bin </td>
+            <td>: <?= $dataPria->bin_pria; ?></td>
+          </tr>
+          <tr>
+            <td>Tempat Lahir </td>
+            <td>: <?= $dataPria->tempat_lahir_pria; ?></td>
+          </tr>
+          <tr>
+            <td>Tanggal Lahir </td>
+            <td>: <?= $dataPria->tanggal_lahir_pria; ?></td>
+          </tr>
+          <tr>
+            <td>Agama </td>
+            <td>: <?= $dataPria->agama_pria; ?></td>
+          </tr>
+          <tr>
+            <td>Alamat </td>
+            <td>: <?= $dataPria->alamat_pria; ?></td>
+          </tr>
+          <tr>
+            <td>Warga Negara </td>
+            <td>: <?= $dataPria->warga_negara_pria; ?></td>
+          </tr>
+          <tr>
+            <td>Status </td>
+            <td>: <?= $dataPria->status_pria; ?></td>
+          </tr>
+          <tr>
+            <td>Umur </td>
+            <td>: <?= $dataPria->umur_pria; ?></td>
+          </tr>
+        </table>
 
-    <div class="form-group">
-      <label for="">No. KTP</label>
-      <input class="form-control" type="number" placeholder="No. Ktp">
-    </div>
+        <?php include('pria/form.php') ?>
 
-    <div class="form-group">
-      <label for="">Foto KTP</label>
-      <button type="button" class="btn btn-<?php if ($dataPria->ktp_pria) {
-                                              echo "success";
-                                            } else {
-                                              echo "primary";
-                                            } ?>" data-toggle="modal" data-target="#exampleModalKTPPRIA">
-        <?php if ($dataPria->ktp_pria) {
-          echo '<i  class="fa fa-check"></i> selesai';
-        } else {
-          echo "Upload";
-        } ?>
-      </button>
 
-    </div>
 
-    <div class="form-group">
-      <label for="">Kartu Keluarga</label>
-      <button type="button" class="btn btn-<?php if ($dataPria->kk_pria) {
-                                              echo "success";
-                                            } else {
-                                              echo "primary";
-                                            } ?>" data-toggle="modal" data-target="#exampleModalKKPriaa">
-        <?php if ($dataPria->kk_pria) {
-          echo '<i  class="fa fa-check"></i> selesai';
-        } else {
-          echo "Upload";
-        } ?>
-      </button>
+      </div>
     </div>
+    <hr>
 
-    <div class="form-group">
-      <label for="">Ijazah Terakhir</label>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalKKPria">
-        <i class="fa fa-check"></i>Upload
-      </button>
-    </div>
+    <?php include('pria/ktp.php') ?>
+    <?php include('pria/ktp_wali.php') ?>
+    <?php include('pria/kk.php') ?>
+    <?php include('pria/ijazah_terakhir.php') ?>
+    <?php include('pria/sk_imunitas.php') ?>
+    <?php include('pria/sk_belum_menikah.php') ?>
+    <?php include('pria/pas_foto.php') ?>
+    <?php include('pria/akta_cerai.php') ?>
+    <?php include('pria/sk_kematian_cerai.php') ?>
+    <?php include('pria/piagam_nasehat.php') ?>
 
-    <div class="form-group">
-      <label for="">Surat Keterangan Imunitas</label>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalSkImunitasPria">
-        <i class="fa fa-check"></i>Upload
-      </button>
-    </div>
 
-    <div class="form-group">
-      <label for="">Surat Keterangan Belum Menikah</label>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalBelumMenikahPria">
-        <i class="fa fa-check"></i>Upload
-      </button>
-    </div>
-
-    <div class="form-group">
-      <label for="">Pas Foto Latar Biru</label>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPasFotoPria">
-        <i class="fa fa-check"></i>Upload
-      </button>
-    </div>
-
-    <div class="form-group">
-      <label for="">Akta Cerai</label>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAktaPria">
-        <i class="fa fa-check"></i>Upload
-      </button>
-    </div>
-
-    <div class="form-group">
-      <label for="">Keterangan Kematian Bagi yang Cerai Mati</label>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCeraiKematianPria">
-        <i class="fa fa-check"></i>Upload
-      </button>
-    </div>
 
     <div class="row">
       <div class="col-md-12 text-center">
@@ -105,186 +85,3 @@
 
   </div>
 </section>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="modalCeraiKematianPria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <?= form_open_multipart('home/nikah/daftar/') ?>
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Keterangan Kematian Bagi yang Cerai Mati</h5>
-      </div>
-      <div class="modal-body">
-        <input class="form-control" type="file" name="sk_kematian_cerai_pria" required id="">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalAktaPria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <?= form_open_multipart('home/nikah/daftar/') ?>
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Akta Cerai</h5>
-      </div>
-      <div class="modal-body">
-        <input class="form-control" type="file" name="akta_cerai_pria" required id="">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalPasFotoPria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <?= form_open_multipart('home/nikah/daftar/') ?>
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Pas Foto Latar Biru</h5>
-      </div>
-      <div class="modal-body">
-        <input class="form-control" type="file" name="foto_pria" required id="">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalBelumMenikahPria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <?= form_open_multipart('home/nikah/daftar/') ?>
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Surat Keterangan Belum Menikah</h5>
-      </div>
-      <div class="modal-body">
-        <input class="form-control" type="file" name="sk_belum_menikah_pria" required id="">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalSkImunitasPria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <?= form_open_multipart('home/nikah/daftar/') ?>
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Surat Keterangan Imunitas</h5>
-      </div>
-      <div class="modal-body">
-        <input class="form-control" type="file" name="sk_imunitas_pria" required id="">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalKKPria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <?= form_open_multipart('home/nikah/daftar/') ?>
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ijazah Terakhir</h5>
-      </div>
-      <div class="modal-body">
-        <input class="form-control" type="file" name="ijazah_terakhir_pria" required id="">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalKKPria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <?= form_open_multipart('home/nikah/daftar/') ?>
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Kartu Keluarga Pria</h5>
-      </div>
-      <div class="modal-body">
-        <input class="form-control" type="file" name="kk_pria" required id="">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalKKPriaa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <?= form_open_multipart('home/nikah/daftar/uploadKKPria') ?>
-      <form method="post">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Kartu keluarga Pria</h5>
-        </div>
-        <div class="modal-body">
-          <input class="form-control" type="file" name="kk_pria" required id="">
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Upload</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </form>
-      <?= form_close() ?>
-    </div>
-  </div>
-</div>
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalKKPRIA" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <?= form_open_multipart('home/nikah/daftar/uploadKtp') ?>
-      <form method="post">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">KTP AAPria</h5>
-        </div>
-        <div class="modal-body">
-          <input class="form-control" type="file" name="ktp_pria" id="">
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Upload</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </form>
-      <?= form_close() ?>
-    </div>
-  </div>
-</div>

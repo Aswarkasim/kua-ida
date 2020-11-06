@@ -7,7 +7,8 @@
     <div class="box-body">
 
         <p>
-            <a href="<?= base_url($add) ?>" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
+            <!-- <a href="<?= base_url($add) ?>" class="btn btn-success"><i class="fa fa-plus"></i> Tambah</a> -->
+
         </p>
 
         <table class="table DataTable">
@@ -15,7 +16,10 @@
                 <tr>
                     <th width="40px">No</th>
                     <th>Nama</th>
-                    <th width="100px">Status</th>
+                    <th width="100px">Tanggal Akad</th>
+                    <th width="200px">Tempat</th>
+                    <th width="300px">Penghulu</th>
+                    <th width="100px">Status Berkas</th>
                     <th width="200px">Tindakan</th>
                 </tr>
             </thead>
@@ -25,13 +29,15 @@
                     <tr>
                         <td><?= $no ?></td>
                         <td>
-                            <strong><?= $row->nama_admin ?></strong><br>
-                            <p><?= $row->email ?> - <?= $row->role ?></p>
+                            <a href="<?= base_url('admin/pendaftaran/detail/' . $row->id_daftar) ?>"><strong><?= $row->nama_pria . ' & ' . $row->nama_wanita ?></strong><br></a>
                         </td>
-                        <td><?php if ($row->is_active == 1) {
-                                echo '<div class="label label-success">Aktif</div>';
+                        <td><?= longdate_indo($row->tgl_akad_nikah); ?></td>
+                        <td><?= $row->tempat_akad; ?></td>
+                        <td><?= $row->penghulu; ?></td>
+                        <td><?php if ($row->is_valid == 1) {
+                                echo '<div class="label label-success">Valid</div>';
                             } else {
-                                echo '<div class="label label-danger">Tidak Aktif</div>';
+                                echo '<div class="label label-danger">Tidak Valid</div>';
                             } ?></td>
                         <td>
                             <div class="btn-group">
@@ -41,8 +47,8 @@
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="<?= base_url($edit . $row->id_admin)  ?>"><i class="fa fa-edit"></i> Edit</a></li>
-                                    <li><a class="tombol-hapus" href="<?= base_url($delete . $row->id_admin)  ?>"><i class="fa fa-trash"></i> Hapus</a></li>
+                                    <!-- <li><a href="<?= base_url($edit . $row->id_daftar)  ?>"><i class="fa fa-edit"></i> Edit</a></li> -->
+                                    <li><a class="tombol-hapus" href="<?= base_url($delete . $row->id_daftar)  ?>"><i class="fa fa-trash"></i> Hapus</a></li>
                                 </ul>
                             </div>
 

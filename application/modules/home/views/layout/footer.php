@@ -1,9 +1,8 @@
-<hr>
 <footer class="footer">
   <div class="container">
     <span class="text-muted"><a href="<?= base_url('admin/auth'); ?>">admin log</a></span>
     <span class="pull-right">
-      <?php if ($this->session->userdata('id_alumni')) { ?>
+      <?php if ($this->session->userdata('id_user')) { ?>
         <a href="<?= base_url('home/auth/logout'); ?>" class="btn btn-secondary"><i class="fa fa-sign-out"></i> Logout</a>
       <?php } ?>
     </span>

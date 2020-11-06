@@ -1,10 +1,9 @@
-<section class="pt80 pb90 bg-white">
-  <div class="container">
-    <div class="row">
+<div class="container">
+  <div class="row">
 
-      <div class="col-md-12 text-center pb50">
-        <h2>Pendaftaran<br><strong>Pernikahan</strong></h2>
-      </div>
+    <div class="col-md-12 text-center">
+      <h2>Pendaftaran<br><strong>Pernikahan</strong></h2>
+
 
       <div class="row">
         <div class="col-md-12 text-center">
@@ -24,4 +23,4 @@
 
     </div>
   </div>
-</section>
+</div>

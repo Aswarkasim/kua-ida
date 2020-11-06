@@ -1,6 +1,30 @@
 <div class="flash-data" data-flashdata="<?= $this->session->flashdata('msg') ?>"></div>
 <div class="gagal" data-flashdata="<?= $this->session->flashdata('msg_er') ?>"></div>
 
+<style>
+  .text-black {
+    color: black;
+  }
+</style>
+
+<div class="jumbotron mb-0 pb-2 pt-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+        <img width="100%" src="<?= base_url('assets/img/logo.png'); ?>" alt="">
+      </div>
+      <div class="col-md-11">
+        <strong>
+          <h2 class="text-black mb-0">KANTOR URUSAN AGAMA</h2>
+          <h3 class="text-black"> KECAMATAN SENDANA</h3>
+          <small>No. Telp. 086755645 | Alamat : Jl. Indonesia No. 24</p>
+        </strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <div class="flash-data" data-flashdata="<?= $this->session->flashdata('msg') ?>"></div>
 <div class="gagal" data-flashdata="<?= $this->session->flashdata('msg_er') ?>"></div>
@@ -26,9 +50,10 @@
 
 
         <?php if ($this->session->userdata('id_user')) { ?>
-          <a href="<?= base_url('user/pribadi'); ?>" class="btn btn-success">
+          <a href="<?= base_url('user/dashboard'); ?>" class="btn btn-success">
             <i class="fa fa-user"></i> <?php echo ' &nbsp' . $this->session->userdata('namalengkap') ?>
           </a>
+
         <?php } else { ?>
           <a href="<?= base_url('home/auth'); ?>" class="btn btn-success">
             <i class="fa fa-sign-in"></i> Login

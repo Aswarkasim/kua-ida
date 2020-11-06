@@ -37,14 +37,58 @@
             </div>
           </div>
 
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3">
+                <label for="" class="pull-right">Wali Calon Istri</label>
+              </div>
+              <div class="col-md-9">
+                <input type="text" name="wali_wanita" placeholder="Wali Calon Istri" value="<?= set_value('wali_wanita') ?>" class="form-control">
+              </div>
+            </div>
+          </div>
 
           <div class="form-group">
             <div class="row">
               <div class="col-md-3">
-                <label for="" class="pull-right">Akad</label>
+                <label for="" class="pull-right">Penghulu</label>
               </div>
               <div class="col-md-9">
-                <input type="date" name="akad" value="<?= set_value('akad') ?>" class="form-control">
+                <input type="text" name="penghulu" placeholder="Penghulu" value="<?= set_value('penghulu') ?>" class="form-control">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3">
+                <label for="" class="pull-right">Mahar</label>
+              </div>
+              <div class="col-md-9">
+                <input type="text" name="mahar_pernikahan" placeholder="Mahar" value="<?= set_value('mahar_pernikahan') ?>" class="form-control">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3">
+                <label for="" class="pull-right">Saksi</label>
+              </div>
+              <div class="col-md-9">
+                <input type="text" name="saksi" placeholder="Saksi" value="<?= set_value('saksi') ?>" class="form-control">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3">
+                <label for="" class="pull-right">Tanggal Akad</label>
+              </div>
+              <div class="col-md-9">
+                <input type="date" name="tanggal" value="<?= set_value('akad') ?>" class="form-control">
               </div>
             </div>
           </div>

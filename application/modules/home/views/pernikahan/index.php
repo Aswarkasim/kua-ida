@@ -18,7 +18,7 @@
                 <h3><strong>Syarat Pernikahan</strong></h3>
                 <div class="">
                   <div class="btn-group">
-                    <a href="<?= base_url('home/nikah/syarat'); ?>" class="btn btn-success">Lihat</a>
+                    <a href="<?= base_url('home/nikah/pernikahan/syarat'); ?>" class="btn btn-success">Lihat</a>
                   </div>
                 </div>
               </div>
