@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container pt-5">
 
   <div class="row">
 
@@ -24,40 +24,8 @@
     </div>
     <!-- Sidebar Widgets Column -->
     <div class="col-md-4">
-      <!-- Categories Widget -->
-      <div class="card my-4">
-        <h5 class="card-header">Categories</h5>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-lg-12">
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#">Web Design</a>
-                </li>
-                <li>
-                  <a href="#">HTML</a>
-                </li>
-                <li>
-                  <a href="#">Freebies</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Search Widget -->
-      <div class="card my-4">
-        <h5 class="card-header">Berita</h5>
-        <div class="card-body">
-          <div class="input-group">
-            <h5><strong>Judul</strong></h5>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, dicta.</p>
-            <hr>
-          </div>
-        </div>
-      </div>
-
+      <?php $this->load->view('home/berita/cari') ?>
+      <?php $this->load->view('home/berita/kategori') ?>
 
 
     </div>

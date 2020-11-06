@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container pt-5">
 
   <div class="row">
 
@@ -28,24 +28,10 @@
 
     <!-- Sidebar Widgets Column -->
     <div class="col-md-4">
+      <?php $this->load->view('home/berita/cari') ?>
+      <?php $this->load->view('home/berita/kategori') ?>
 
-
-      <!-- Search Widget -->
-      <div class="card my-4">
-        <h5 class="card-header">Berita</h5>
-        <div class="card-body">
-
-          <?php foreach ($berita as $row) { ?>
-            <div class="input-group">
-              <h5><strong><a href="<?= base_url('home/berita/detail/' . $row->id_berita); ?>"> <?= $row->judul_berita; ?></a></strong></h5>
-              <p><?= character_limiter($row->isi, '50') ?></p>
-              <hr>
-            </div>
-          <?php } ?>
-        </div>
-      </div>
     </div>
 
   </div>
-
 </div>

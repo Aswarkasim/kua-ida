@@ -10,7 +10,7 @@
 
       <hr>
       <!-- Preview Image -->
-      <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+      <!-- <img class="img-fluid rounded" src="http://placehold.it/900x300" alt=""> -->
 
       <hr>
 
@@ -30,6 +30,7 @@
           <?php foreach ($berita as $row) { ?>
             <div class="input-group">
               <h5><strong><a href="<?= base_url('home/berita/detail/' . $row->id_berita); ?>"> <?= $row->judul_berita; ?></a></strong></h5>
+              <br>
               <p><?= character_limiter($row->isi, '50') ?></p>
               <hr>
             </div>

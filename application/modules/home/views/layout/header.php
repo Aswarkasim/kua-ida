@@ -1,5 +1,9 @@
+<?php $konfigurasi = $this->Crud_model->listingOne('tbl_konfigurasi', 'id_konfigurasi', '1');
+?>
+
 <div class="flash-data" data-flashdata="<?= $this->session->flashdata('msg') ?>"></div>
 <div class="gagal" data-flashdata="<?= $this->session->flashdata('msg_er') ?>"></div>
+
 
 <style>
   .text-black {
@@ -15,9 +19,9 @@
       </div>
       <div class="col-md-11">
         <strong>
-          <h2 class="text-black mb-0">KANTOR URUSAN AGAMA</h2>
-          <h3 class="text-black"> KECAMATAN SENDANA</h3>
-          <small>No. Telp. 086755645 | Alamat : Jl. Indonesia No. 24</p>
+          <h2 class="text-black mb-0"><?= $konfigurasi->nama_aplikasi; ?></h2>
+          <h3 class="text-black"> KECAMATAN <?= $konfigurasi->kecamatan; ?></h3>
+          <small>No. Telp. <?= $konfigurasi->kontak_person; ?> | Alamat : <?= $konfigurasi->alamat; ?></p>
         </strong>
       </div>
     </div>
@@ -38,13 +42,27 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
 
-        <li class="nav-item active"><a class="nav-link" href="<?= base_url('home/index'); ?>"><strong> Beranda</strong></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?= base_url('home/berita'); ?>"><strong> Berita</strong></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?= base_url('home/nikah/pernikahan'); ?>"><strong> Pernikahan</strong></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?= base_url('home/sejarah'); ?>"><strong> Sejarah</strong></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?= base_url('home/visimisi'); ?>"><strong> Visi & Misi</strong></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?= base_url('home/organisasi'); ?>"><strong> Struktur Organisasi</strong></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?= base_url('home/saran'); ?>"><strong> Hubungi Kami</strong></a></li>
+        <li class="nav-item <?php if ($this->uri->segment('2') == 'index') {
+                              echo "active";
+                            } ?>"><a class="nav-link" href="<?= base_url('home/index'); ?>"><strong> Beranda</strong></a></li>
+        <li class="nav-item <?php if ($this->uri->segment('2') == 'berita') {
+                              echo "active";
+                            } ?>"><a class="nav-link" href="<?= base_url('home/berita'); ?>"><strong> Berita</strong></a></li>
+        <li class="nav-item <?php if ($this->uri->segment('2') == 'nikah') {
+                              echo "active";
+                            } ?>"><a class="nav-link" href="<?= base_url('home/nikah/pernikahan'); ?>"><strong> Pernikahan</strong></a></li>
+        <li class="nav-item <?php if ($this->uri->segment('2') == 'sejarah') {
+                              echo "active";
+                            } ?>"><a class="nav-link" href="<?= base_url('home/sejarah'); ?>"><strong> Sejarah</strong></a></li>
+        <li class="nav-item <?php if ($this->uri->segment('2') == 'visimisi') {
+                              echo "active";
+                            } ?>"><a class="nav-link" href="<?= base_url('home/visimisi'); ?>"><strong> Visi & Misi</strong></a></li>
+        <li class="nav-item <?php if ($this->uri->segment('2') == 'organisasi') {
+                              echo "active";
+                            } ?>"><a class="nav-link" href="<?= base_url('home/organisasi'); ?>"><strong> Struktur Organisasi</strong></a></li>
+        <li class="nav-item <?php if ($this->uri->segment('2') == 'saran') {
+                              echo "active";
+                            } ?>"><a class="nav-link" href="<?= base_url('home/saran'); ?>"><strong> Hubungi Kami</strong></a></li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
 

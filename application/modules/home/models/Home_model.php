@@ -28,12 +28,15 @@ class Home_model extends CI_Model
     return $query->row();
   }
 
-  function listBerita()
+  function listBerita($limit, $offset)
   {
     $this->db->select('tbl_berita.*,
                             tbl_kategori.nama_kategori')
       ->from('tbl_berita')
-      ->join('tbl_kategori', 'tbl_kategori.id_kategori = tbl_kategori.id_kategori', 'LEFT');
+      ->join('tbl_kategori', 'tbl_kategori.id_kategori = tbl_kategori.id_kategori', 'LEFT')
+      ->limit($limit)
+      ->offset($offset)
+      ->order_by('date_created', 'DESC');
     return $this->db->get()->result();
   }
 
@@ -59,6 +62,13 @@ class Home_model extends CI_Model
     $this->db->select('*')
       ->from('tbl_daftar')
       ->where('id_user', $id_user);
+    return $this->db->get()->result();
+  }
+
+  public function cariBerita($key)
+  {
+    $this->db->select('*')->from('tbl_berita')
+      ->like('judul_berita', $key);
     return $this->db->get()->result();
   }
 }
