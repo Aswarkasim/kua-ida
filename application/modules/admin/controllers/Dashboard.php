@@ -19,9 +19,19 @@ class Dashboard extends CI_Controller
         $id_admin = $this->session->userdata('id_admin');
         $user = $this->Crud_model->listingOne('tbl_admin', 'id_admin', $id_admin);
 
+        $dataUser = $this->Crud_model->listing('tbl_user');
+        $berita = $this->Crud_model->listing('tbl_berita');
+        $karyawan = $this->Crud_model->listing('tbl_karyawan');
+        $jadwal = $this->Crud_model->listing('tbl_jadwal');
+
+
         $data = [
             'title'     => 'Dashboard',
             'user'      => $user,
+            'dataUser'      => $dataUser,
+            'berita'      => $berita,
+            'karyawan'      => $karyawan,
+            'jadwal'      => $jadwal,
             'content'   => 'admin/dashboard/index'
         ];
 

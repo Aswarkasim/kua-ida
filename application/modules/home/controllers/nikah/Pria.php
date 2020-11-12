@@ -319,7 +319,7 @@ class Pria extends CI_Controller
 
       if (!$this->upload->do_upload('ktp_wali_pria')) {
         $this->upload->display_errors();
-        redirect('home/nikah/daftar/dataWanita');
+        redirect('home/nikah/daftar/dataPria');
       } else {
 
         if ($dataDaftar->ktp_wali_pria != "") {
@@ -330,8 +330,8 @@ class Pria extends CI_Controller
           'ktp_wali_pria'        => $config['upload_path'] . $upload_data['uploads']['file_name']
         ];
         $this->Crud_model->edit('tbl_daftar', 'id_user', $id_user, $data);
-        $this->session->set_flashdata('msg', 'Sk Kematian Cerai diupload');
-        redirect('home/nikah/daftar/dataWanita');
+        $this->session->set_flashdata('msg', 'KTP Wali diupload');
+        redirect('home/nikah/daftar/dataPria');
       }
     }
   }

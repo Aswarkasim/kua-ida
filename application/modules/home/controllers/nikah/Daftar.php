@@ -111,7 +111,7 @@ class Daftar extends CI_Controller
           'sk_desa'        => $config['upload_path'] . $upload_data['uploads']['file_name']
         ];
         $this->Crud_model->edit('tbl_daftar', 'id_user', $id_user, $data);
-        $this->session->set_flashdata('msg', 'Akta Cerai diupload');
+        $this->session->set_flashdata('msg', 'SK Desa diupload');
         redirect('home/nikah/daftar/dataLengkap');
       }
     }
@@ -140,7 +140,7 @@ class Daftar extends CI_Controller
           'rekomendasi_nikah'        => $config['upload_path'] . $upload_data['uploads']['file_name']
         ];
         $this->Crud_model->edit('tbl_daftar', 'id_user', $id_user, $data);
-        $this->session->set_flashdata('msg', 'Akta Cerai diupload');
+        $this->session->set_flashdata('msg', 'Rekomendasi nikah telah diupload');
         redirect('home/nikah/daftar/dataLengkap');
       }
     }

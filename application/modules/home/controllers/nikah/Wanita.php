@@ -294,7 +294,7 @@ class Wanita extends CI_Controller
           'piagam_nasehat_pernikahan_wanita'        => $config['upload_path'] . $upload_data['uploads']['file_name']
         ];
         $this->Crud_model->edit('tbl_daftar', 'id_user', $id_user, $data);
-        $this->session->set_flashdata('msg', 'Sk Kematian Cerai diupload');
+        $this->session->set_flashdata('msg', 'Paigam nasehat pernikahan diupload');
         redirect('home/nikah/daftar/dataWanita');
       }
     }
@@ -323,7 +323,7 @@ class Wanita extends CI_Controller
           'ktp_wali_wanita'        => $config['upload_path'] . $upload_data['uploads']['file_name']
         ];
         $this->Crud_model->edit('tbl_daftar', 'id_user', $id_user, $data);
-        $this->session->set_flashdata('msg', 'Sk Kematian Cerai diupload');
+        $this->session->set_flashdata('msg', 'Sk wali diupload');
         redirect('home/nikah/daftar/dataWanita');
       }
     }

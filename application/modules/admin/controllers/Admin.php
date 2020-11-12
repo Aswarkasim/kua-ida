@@ -61,9 +61,9 @@ class Admin extends CI_Controller
         }
     }
 
-    function edit($admin)
+    function edit($id_admin)
     {
-        $admin = $this->Crud_model->listingOne('tbl_admin', 'admin', $admin);
+        $admin = $this->Crud_model->listingOne('tbl_admin', 'id_admin', $id_admin);
 
         $valid = $this->form_validation;
 
@@ -74,7 +74,7 @@ class Admin extends CI_Controller
 
         if ($valid->run() === FALSE) {
             $data = [
-                'title'     => 'Edit ' . $admin->admin,
+                'title'     => 'Edit ' . $admin->nama_admin,
                 'edit'       => 'admin/admin/edit/',
                 'back'      => 'admin/admin',
                 'admin'      => $admin,
@@ -98,7 +98,7 @@ class Admin extends CI_Controller
                 'role'          => $i->post('role'),
                 'is_active'     => $i->post('is_aktif')
             ];
-            $this->Crud_model->edit('tbl_admin', 'admin', $admin, $data);
+            $this->Crud_model->edit('tbl_admin', 'id_admin', $id_admin, $data);
             $this->session->set_flashdata('msg', 'diedit');
             redirect('admin/admin/edit/' . $admin, 'refresh');
         }

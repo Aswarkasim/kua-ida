@@ -29,7 +29,7 @@
 
           <?php foreach ($berita as $row) { ?>
             <div class="input-group">
-              <h5><strong><a href="<?= base_url('home/berita/detail/' . $row->id_berita); ?>"> <?= $row->judul_berita; ?></a></strong></h5>
+              <h5><strong><a href="<?= base_url('home/berita/detail/' . $row->slug); ?>"> <?= $row->judul_berita; ?></a></strong></h5>
               <br>
               <p><?= character_limiter($row->isi, '50') ?></p>
               <hr>

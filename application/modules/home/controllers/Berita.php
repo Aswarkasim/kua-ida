@@ -67,6 +67,21 @@ class Berita extends CI_Controller
     ];
     $this->load->view('home/layout/wrapper', $data, FALSE);
   }
+
+  function kategori($id_kategori)
+  {
+    $berita = $this->Crud_model->listingOneAll('tbl_berita', 'id_kategori', $id_kategori);
+    $kategori = $this->Crud_model->listing('tbl_kategori');
+
+
+
+    $data = [
+      'berita'  => $berita,
+      'kategori'  => $kategori,
+      'content'  => 'home/berita/index'
+    ];
+    $this->load->view('home/layout/wrapper', $data, FALSE);
+  }
 }
 
 /* End of file Controllername.php */

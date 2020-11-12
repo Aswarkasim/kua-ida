@@ -76,8 +76,6 @@ class Jadwal extends CI_Controller
 
     $valid->set_rules('nama_pria', 'Nama Pria', 'required');
     $valid->set_rules('nama_wanita', 'Nama Wanita', 'required');
-    $valid->set_rules('akad', 'Akad', 'required');
-    $valid->set_rules('tempat', 'Tempat', 'required');
 
     if ($valid->run() === FALSE) {
       $data = [
@@ -92,14 +90,15 @@ class Jadwal extends CI_Controller
       $i = $this->input;
       $data = [
         'nama_pria'       => $i->post('nama_pria'),
+        'nama_pria'       => $i->post('nama_pria'),
         'nama_wanita'     => $i->post('nama_wanita'),
         'tanggal'         => $i->post('tanggal'),
+        'tempat'           => $i->post('tempat'),
+        'is_done'         => $i->post('is_done'),
         'penghulu'        => $i->post('penghulu'),
         'mahar_pernikahan' => $i->post('mahar_pernikahan'),
         'saksi'           => $i->post('saksi'),
-        'tempat'           => $i->post('tempat'),
         'wali_wanita'     => $i->post('wali_wanita'),
-        'is_done'         => $i->post('is_done')
       ];
       $this->Crud_model->edit('tbl_jadwal', 'id_jadwal', $id_jadwal, $data);
       $this->session->set_flashdata('msg', 'ditambah');
