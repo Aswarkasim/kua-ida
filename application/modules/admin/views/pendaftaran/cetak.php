@@ -160,7 +160,7 @@
       <tr>
         <td width="20px">4. </td>
         <td width="200px">Saksi</td>
-        <td>: <?= $daftar->saksi_1 ?></td>
+        <td>: <?= $daftar->saksi ?></td>
       </tr>
 
       <tr>

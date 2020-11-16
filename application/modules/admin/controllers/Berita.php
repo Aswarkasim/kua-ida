@@ -119,7 +119,7 @@ class Berita extends CI_Controller
         $this->upload->initialize($config);
         if (!$this->upload->do_upload('gambar')) {
           $data = [
-            'title'    => 'Tambah Berita',
+            'title'    => 'Edit Berita',
             'add'    => 'admin/berita/add',
             'edit'    => 'admin/berita/edit/',
             'back'    => 'admin/berita',
@@ -164,7 +164,7 @@ class Berita extends CI_Controller
       }
     }
     $data = [
-      'title'    => 'Tambah Berita',
+      'title'    => 'Edit Berita',
       'edit'    => 'admin/berita/edit/',
       'back'    => 'admin/berita',
       'kategori'    => $kategori,
