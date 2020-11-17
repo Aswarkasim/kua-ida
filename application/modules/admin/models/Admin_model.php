@@ -63,6 +63,26 @@ class Admin_model extends CI_Model
       ->get();
     return $query->result();
   }
+
+  function listSaran()
+  {
+    $this->db->select('tbl_saran.*,
+                            tbl_user.namalengkap')
+      ->from('tbl_saran')
+      ->join('tbl_user', 'tbl_user.id_user = tbl_saran.id_user', 'LEFT')
+      ->order_by('tbl_saran.date_created', 'DESC');
+    return $this->db->get()->result();
+  }
+
+  function detailSaran($id_saran)
+  {
+    $this->db->select('tbl_saran.*,
+                            tbl_user.namalengkap')
+      ->from('tbl_saran')
+      ->join('tbl_user', 'tbl_user.id_user = tbl_user.id_user', 'LEFT')
+      ->where('id_saran', $id_saran);
+    return $this->db->get()->row();
+  }
 }
 
 /* End of file ModelName.php */

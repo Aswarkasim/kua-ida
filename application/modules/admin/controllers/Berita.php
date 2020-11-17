@@ -73,7 +73,7 @@ class Berita extends CI_Controller
 
           $i = $this->input;
 
-          $slug = random_string() . url_title($i->post('-judul_berita', 'dash', true));
+          $slug = random_string() . '-' . url_title($i->post('judul_berita', 'dash', true));
           $data = [
             'id_berita'       => random_string(),
             'id_kategori'     => $i->post('id_kategori'),

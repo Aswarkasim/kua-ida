@@ -69,7 +69,7 @@
                                         <label for="" class="pull-right">Isi Berita</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <textarea name="isi" id="editor1" placeholder="Isi Berita" class="form-control"></textarea>
+                                        <textarea name="isi" id="editor1" placeholder="Isi Berita" class="form-control"><?= set_value('isi') ?></textarea>
                                     </div>
                                 </div>
                             </div>
