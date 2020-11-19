@@ -151,7 +151,7 @@ class Daftar extends CI_Controller
     $id_user = $this->session->userdata('id_user');
     $i = $this->input;
     $valid = $this->form_validation;
-    $valid->set_rules('saksi_1', 'Saksi 1', 'required');
+    $valid->set_rules('saksi', 'Saksi', 'required');
 
     if ($valid->run() === false) {
       redirect('home/nikah/daftar/dataLengkap');

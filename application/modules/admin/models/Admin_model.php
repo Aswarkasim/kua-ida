@@ -79,7 +79,7 @@ class Admin_model extends CI_Model
     $this->db->select('tbl_saran.*,
                             tbl_user.namalengkap')
       ->from('tbl_saran')
-      ->join('tbl_user', 'tbl_user.id_user = tbl_user.id_user', 'LEFT')
+      ->join('tbl_user', 'tbl_user.id_user = tbl_saran.id_user', 'LEFT')
       ->where('id_saran', $id_saran);
     return $this->db->get()->row();
   }
