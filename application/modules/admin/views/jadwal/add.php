@@ -93,6 +93,17 @@
             </div>
           </div>
 
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3">
+                <label for="" class="pull-right">Jam</label>
+              </div>
+              <div class="col-md-9">
+                <input type="time" name="jam" value="<?= set_value('jam') ?>" class="form-control">
+              </div>
+            </div>
+          </div>
+
 
           <div class="form-group">
             <div class="row">

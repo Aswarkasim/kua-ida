@@ -94,6 +94,17 @@
             </div>
           </div>
 
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3">
+                <label for="" class="pull-right">Jam</label>
+              </div>
+              <div class="col-md-9">
+                <input type="time" name="jam" value="<?= $jadwal->jam ?>" class="form-control">
+              </div>
+            </div>
+          </div>
+
 
           <div class="form-group">
             <div class="row">
@@ -135,7 +146,7 @@
               </div>
               <div class="col-md-9">
                 <a href="<?= base_url($back) ?>" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Kembali</a>
-                <button type="submit" class="btn btn-primary">Edit</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
               </div>
             </div>
           </div>

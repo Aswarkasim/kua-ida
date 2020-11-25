@@ -9,7 +9,7 @@
         <div class="alert alert-success">
             <p>
                 <i class="fa fa-user"></i>
-                Selamat datang <?= $user->nama_admin ?> diaplikasi KUA kecamatan sendana
+                Selamat datang <?= $user->nama_admin ?> diaplikasi KUA kecamatan sendana. Download panduan penggunaan <a href="<?= base_url('admin/dashboard/panduan') ?>">di sini <i class="fa fa-download"></i></a>
             </p>
         </div>
     </div>

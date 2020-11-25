@@ -67,6 +67,7 @@ class Syarat extends CI_Controller
       $i = $this->input;
       $data = [
         'nama_syarat'   => $i->post('nama_syarat'),
+        'keterangan'   => $i->post('keterangan'),
         'id_syarat'   => $id_syarat
       ];
       $this->Crud_model->edit('tbl_syarat', 'id_syarat', $id_syarat, $data);

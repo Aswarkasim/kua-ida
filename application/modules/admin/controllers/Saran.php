@@ -25,7 +25,7 @@ class Saran extends CI_Controller
   {
     is_read('tbl_saran', 'id_saran', $id_saran);
     $saran = $this->AM->detailSaran($id_saran);
-    print_r($saran);
+    // print_r($saran);
     $data = [
       'saran'     => $saran,
       'content'   => 'admin/saran/detail'
