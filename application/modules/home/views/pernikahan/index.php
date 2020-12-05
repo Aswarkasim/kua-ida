@@ -13,7 +13,7 @@
 
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-              <img src="<?= base_url('assets/home/img/1.jpg'); ?>" alt="">
+              <img src="<?= base_url('assets/img/1.jpeg'); ?>" alt="">
               <div class="card-body">
                 <h3><strong>Syarat Pernikahan</strong></h3>
                 <div class="">
@@ -27,7 +27,7 @@
 
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-              <img src="<?= base_url('assets/home/img/2.jpg'); ?>" alt="">
+              <img src="<?= base_url('assets/img/2.jpg'); ?>" alt="">
               <div class="card-body">
                 <h3><strong>Pendaftaran Nikah</strong></h3>
                 <div class="">
@@ -41,7 +41,7 @@
 
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-              <img src="<?= base_url('assets/home/img/1.jpg'); ?>" alt="">
+              <img src="<?= base_url('assets/img/3.jpg'); ?>" alt="">
               <div class="card-body">
                 <h3><strong>Jadwal Pernikahan</strong></h3>
                 <div class="">

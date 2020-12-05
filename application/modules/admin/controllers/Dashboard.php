@@ -45,5 +45,3 @@ class Dashboard extends CI_Controller
         force_download('assets/panduan/panduan.pdf', null);
     }
 }
-
-/* End of file Dashboard.php */

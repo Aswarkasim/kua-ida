@@ -65,10 +65,15 @@ class Pendaftaran extends CI_Controller
 
     $this->load->helper('string');
 
-    $cek_daftar = $this->Crud_model->listingOne('tbl_daftar', 'id_daftar', $id_daftar);
+    $cek_daftar = $this->Crud_model->listingOne('tbl_jadwal', 'id_daftar', $id_daftar);
     $daftar = $this->Crud_model->listingOne('tbl_daftar', 'id_daftar', $id_daftar);
+    if ($cek_daftar) {
+      $id_jadwal = $cek_daftar->id_daftar;
+    } else {
+      $id_jadwal = random_string('numeric', '15');
+    }
     $data = [
-      'id_jadwal'       => random_string('numeric', '15'),
+      'id_jadwal'       => $id_jadwal,
       'id_daftar'       => $id_daftar,
       'nama_pria'       => $daftar->nama_pria,
       'nama_wanita'     => $daftar->nama_wanita,
@@ -80,10 +85,10 @@ class Pendaftaran extends CI_Controller
       'saksi'           => $daftar->saksi,
       'wali_wanita'     => $daftar->wali_wanita
     ];
-    if ($cek_daftar) {
-      $this->Crud_model->edit('tbl_jadwal', 'id_daftar', $id_daftar, $data);
-    } else {
+    if ($cek_daftar == null) {
       $this->Crud_model->add('tbl_jadwal', $data);
+    } else {
+      $this->Crud_model->edit('tbl_jadwal', 'id_jadwal', $id_jadwal, $data);
     }
     $this->session->set_flashdata('msg', 'Jadwal telah dibuat');
     redirect('admin/pendaftaran/detail/' . $id_daftar, 'refresh');
