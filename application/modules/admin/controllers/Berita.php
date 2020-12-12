@@ -132,6 +132,10 @@ class Berita extends CI_Controller
         } else {
           $upload_data = ['uploads' => $this->upload->data()];
 
+          if ($berita->gambar != "") {
+            unlink($berita->gambar);
+          }
+
           $i = $this->input;
 
           $slug = url_title($i->post('judul_berita', 'dash', true));
@@ -172,5 +176,17 @@ class Berita extends CI_Controller
       'content'  => 'admin/berita/edit'
     ];
     $this->load->view('admin/layout/wrapper', $data, FALSE);
+  }
+
+
+  function delete($id_berita)
+  {
+    $berita = $this->Crud_model->listingOne('tbl_berita', 'id_berita', $id_berita);
+    if ($berita->gambar != "") {
+      unlink($berita->gambar);
+    }
+    $this->Crud_model->delete('tbl_berita', 'id_berita', $id_berita);
+    $this->session->set_flashdata('msg', 'Berita dihapus');
+    redirect('admin/berita', 'refresh');
   }
 }
