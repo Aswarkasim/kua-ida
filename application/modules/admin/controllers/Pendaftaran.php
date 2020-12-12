@@ -163,8 +163,8 @@ class Pendaftaran extends CI_Controller
     if ($daftar->sk_belum_menikah_wanita) {
       unlink($daftar->sk_belum_menikah_wanita);
     }
-    if ($daftar->pas_foto_wanita) {
-      unlink($daftar->pas_foto_wanita);
+    if ($daftar->foto_wanita) {
+      unlink($daftar->foto_wanita);
     }
     if ($daftar->akta_cerai_wanita) {
       unlink($daftar->akta_cerai_wanita);
