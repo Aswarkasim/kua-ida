@@ -104,4 +104,88 @@ class Pendaftaran extends CI_Controller
     ];
     $this->load->view('admin/pendaftaran/cetak', $data, FALSE);
   }
+
+  function delete($id_daftar)
+  {
+    $daftar = $this->Crud_model->listingOne('tbl_daftar', 'id_daftar', $id_daftar);
+
+    if ($daftar->ktp_pria) {
+      unlink($daftar->ktp_pria);
+    }
+
+    if ($daftar->ktp_wali_pria) {
+      unlink($daftar->ktp_wali_pria);
+    }
+
+    if ($daftar->kk_pria) {
+      unlink($daftar->kk_pria);
+    }
+    if ($daftar->ijazah_terakhir_pria) {
+      unlink($daftar->ijazah_terakhir_pria);
+    }
+    if ($daftar->sk_imunitas_pria) {
+      unlink($daftar->sk_imunitas_pria);
+    }
+    if ($daftar->sk_belum_menikah_pria) {
+      unlink($daftar->sk_belum_menikah_pria);
+    }
+    if ($daftar->foto_pria) {
+      unlink($daftar->foto_pria);
+    }
+    if ($daftar->akta_cerai_pria) {
+      unlink($daftar->akta_cerai_pria);
+    }
+    if ($daftar->sk_kematian_cerai_pria) {
+      unlink($daftar->sk_kematian_cerai_pria);
+    }
+    if ($daftar->piagam_nasehat_pernikahan_pria) {
+      unlink($daftar->piagam_nasehat_pernikahan_pria);
+    }
+
+
+    if ($daftar->ktp_wanita) {
+      unlink($daftar->ktp_wanita);
+    }
+
+    if ($daftar->ktp_wali_wanita) {
+      unlink($daftar->ktp_wali_wanita);
+    }
+
+    if ($daftar->kk_wanita) {
+      unlink($daftar->kk_wanita);
+    }
+    if ($daftar->ijazah_terakhir_wanita) {
+      unlink($daftar->ijazah_terakhir_wanita);
+    }
+    if ($daftar->sk_imunitas_wanita) {
+      unlink($daftar->sk_imunitas_wanita);
+    }
+    if ($daftar->sk_belum_menikah_wanita) {
+      unlink($daftar->sk_belum_menikah_wanita);
+    }
+    if ($daftar->pas_foto_wanita) {
+      unlink($daftar->pas_foto_wanita);
+    }
+    if ($daftar->akta_cerai_wanita) {
+      unlink($daftar->akta_cerai_wanita);
+    }
+    if ($daftar->sk_kematian_cerai_wanita) {
+      unlink($daftar->sk_kematian_cerai_wanita);
+    }
+    if ($daftar->piagam_nasehat_pernikahan_wanita) {
+      unlink($daftar->piagam_nasehat_pernikahan_wanita);
+    }
+
+    if ($daftar->rekomendasi_nikah) {
+      unlink($daftar->rekomendasi_nikah);
+    }
+    if ($daftar->sk_desa) {
+      unlink($daftar->sk_desa);
+    }
+
+
+    $this->Crud_model->delete('tbl_daftar', 'id_daftar', $id_daftar);
+    $this->session->set_flashdata('msg', 'Data dihapus');
+    redirect('admin/pendaftaran', 'refresh');
+  }
 }
