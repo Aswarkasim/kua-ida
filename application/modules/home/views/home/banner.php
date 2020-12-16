@@ -15,8 +15,8 @@
                                 } ?>">
         <img src="<?= base_url($row->gambar); ?>" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
-          <h1><strong> <?= $row->topik; ?></strong></h1>
-          <h3><?= $row->deskripsi; ?></h3>
+          <h1><strong class="text-white"> <?= $row->topik; ?></strong></h1>
+          <h3 class="text-white"><?= $row->deskripsi; ?></h3>
         </div>
       </div>
     <?php } ?>
