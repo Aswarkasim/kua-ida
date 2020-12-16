@@ -44,33 +44,35 @@ $this->load->helper('string');
               </style>
 
 
-              <table class="table DataTable">
-                <thead>
-                  <tr>
-                    <td width="20px">#</td>
-                    <td width="200px">#</td>
-                    <td>#</td>
-                    <td width="200px">#</td>
-                    <td width="20px">#</td>
-                  </tr>
-                </thead>
-                <tbody>
-
-                  <?php foreach ($saran as $row) { ?>
+              <div class="table-responsive">
+                <table class="table DataTable">
+                  <thead>
                     <tr>
-                      <td class=""><a href="#"><i class="fa <?php if ($row->is_read == '1') {
-                                                              echo 'fa-envelope-open read-data';
-                                                            } else {
-                                                              echo 'fa-envelope not-read-data';
-                                                            } ?>"></i></a></td>
-                      <td class=""><a href="<?= base_url('admin/saran/detail/' . $row->id_saran); ?>"><?= $row->namalengkap; ?></a></td>
-                      <td class=""><?= character_limiter($row->isi_saran, 50); ?></td>
-                      <td class=""><?= format_indo($row->date_created); ?></td>
-                      <td><a href="<?= base_url('admin/saran/delete/' . $row->id_saran); ?>" class="tombol-hapus"><i class="fa fa-trash"></i></a></td>
+                      <td width="20px">#</td>
+                      <td width="200px">#</td>
+                      <td>#</td>
+                      <td width="200px">#</td>
+                      <td width="20px">#</td>
                     </tr>
-                  <?php } ?>
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+
+                    <?php foreach ($saran as $row) { ?>
+                      <tr>
+                        <td class=""><a href="#"><i class="fa <?php if ($row->is_read == '1') {
+                                                                echo 'fa-envelope-open read-data';
+                                                              } else {
+                                                                echo 'fa-envelope not-read-data';
+                                                              } ?>"></i></a></td>
+                        <td class=""><a href="<?= base_url('admin/saran/detail/' . $row->id_saran); ?>"><?= $row->namalengkap; ?></a></td>
+                        <td class=""><?= character_limiter($row->isi_saran, 50); ?></td>
+                        <td class=""><?= format_indo($row->date_created); ?></td>
+                        <td><a href="<?= base_url('admin/saran/delete/' . $row->id_saran); ?>" class="tombol-hapus"><i class="fa fa-trash"></i></a></td>
+                      </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
+              </div>
 
             </div>
           </div>
