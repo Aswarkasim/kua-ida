@@ -2,7 +2,7 @@
   <div class="row text-center">
     <div class="container">
       <h1 class="font-weight-normal">Registrasi</h1>
-      <div class="col-md-offset-2 col-md-6">
+      <div class="offset-2 col-md-6">
         <form action="<?= base_url('home/auth/register')  ?>" method="post">
 
 
@@ -60,7 +60,7 @@
                 <label for="" class="pull-right"><strong>Retype Password</strong></label>
               </div>
               <div class="col-md-8">
-                <input class="form-control" name="re_password" placeholder="Retype Password" type="re_password" value="<?= set_value('re_password') ?>">
+                <input class="form-control" name="re_password" placeholder="Retype Password" type="password" value="<?= set_value('re_password') ?>">
               </div>
             </div>
           </div><br>

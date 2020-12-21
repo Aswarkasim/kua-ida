@@ -33,6 +33,7 @@ class Akun extends CI_Controller
         'jenis_kelamin'        => $i->post('jenis_kelamin'),
         'agama'        => $i->post('agama'),
         'no_hp'        => $i->post('no_hp'),
+        'no_ktp'        => $i->post('no_ktp'),
         'alamat'        => $i->post('alamat')
       ];
       $this->Crud_model->edit('tbl_user', 'id_user', $id_user, $data);

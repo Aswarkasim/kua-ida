@@ -15,6 +15,11 @@
         <div class="modal-body">
 
           <div class="form-group">
+            <label for="">No. KTP</label>
+            <input type="text" class="form-control" name="no_ktp" value="<?= $user->no_ktp; ?>" required placeholder="No. KTP">
+          </div>
+
+          <div class="form-group">
             <label for="">Nama Lengkap</label>
             <input type="text" class="form-control" name="namalengkap" value="<?= $user->namalengkap; ?>" required placeholder="Nama Lengkap">
           </div>
@@ -33,8 +38,8 @@
             <label for="">Jenis Kelamin</label>
             <select name="jenis_kelamin" required class="form-control" id="">
               <option value="">-- Jenis Kelamin --</option>
-              <option value="Laki-laki" <?php $user->jenis_kelamin == 'Laki-laki' ?: "selected" ?>>Laki-laki</option>
-              <option value="Perempuan">Perempuan</option>
+              <option value="Laki-laki" <?= $user->jenis_kelamin == 'Laki-laki' ? 'selected' : '' ?>>Laki-laki</option>
+              <option value="Perempuan" <?= $user->jenis_kelamin == 'Perempuan' ? 'selected' : '' ?>>Perempuan</option>
             </select>
           </div>
 

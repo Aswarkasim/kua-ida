@@ -63,6 +63,10 @@
         <li class="nav-item <?php if ($this->uri->segment('2') == 'saran') {
                               echo "active";
                             } ?>"><a class="nav-link" href="<?= base_url('home/saran'); ?>"><strong> Hubungi Kami</strong></a></li>
+
+        <li class="nav-item <?php if ($this->uri->segment('2') == 'panduan') {
+                              echo "active";
+                            } ?>"><a class="nav-link" href="<?= base_url('home/panduan'); ?>"><strong> Panduan</strong></a></li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
 

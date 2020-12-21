@@ -83,5 +83,3 @@ class Berita extends CI_Controller
     $this->load->view('home/layout/wrapper', $data, FALSE);
   }
 }
-
-/* End of file Controllername.php */

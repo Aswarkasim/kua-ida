@@ -9,7 +9,10 @@ class Dashboard extends CI_Controller
   {
     $id_user   = $this->session->userdata('id_user');
     $data = $this->Crud_model->listingOne('tbl_daftar', 'id_user', $id_user);
-    $jadwal = $this->Crud_model->listingOne('tbl_jadwal', 'id_daftar', $data->id_daftar);
+    $jadwal = '';
+    if (isset($data)) {
+      $jadwal = $this->Crud_model->listingOne('tbl_jadwal', 'id_daftar', $data->id_daftar);
+    }
     $data = [
       'data'    => $data,
       'jadwal'    => $jadwal,

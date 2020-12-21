@@ -42,6 +42,6 @@ class Dashboard extends CI_Controller
     {
 
         $this->load->helper('download');
-        force_download('assets/panduan/panduan.pdf', null);
+        force_download('assets/panduan/panduan_admin.pdf', null);
     }
 }
