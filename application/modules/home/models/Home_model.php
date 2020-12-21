@@ -33,7 +33,7 @@ class Home_model extends CI_Model
     $this->db->select('tbl_berita.*,
                             tbl_kategori.nama_kategori')
       ->from('tbl_berita')
-      ->join('tbl_kategori', 'tbl_kategori.id_kategori = tbl_kategori.id_kategori', 'LEFT')
+      ->join('tbl_kategori', 'tbl_kategori.id_kategori = tbl_berita.id_kategori', 'LEFT')
       ->limit($limit)
       ->offset($offset)
       ->order_by('date_created', 'DESC');
